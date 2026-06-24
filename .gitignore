@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment Variables
+.env
+backend/.env
+backend/my.env
+*.env
+*env
+*.env.local
+
+# Production Builds
+dist/
+frontend/dist/
+
+# Local Uploads (Ignore actual uploaded files but preserve folder structure)
+backend/public/uploads/*
+!backend/public/uploads/.gitkeep
+
+# System Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
