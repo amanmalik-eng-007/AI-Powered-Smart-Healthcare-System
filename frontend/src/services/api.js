@@ -66,13 +66,13 @@ export const prescriptionAPI = {
   create: (data) => api.post('/api/prescriptions', data),
   getByAppointment: (appointmentId) => api.get(`/api/prescriptions/appointment/${appointmentId}`),
   getMy: () => api.get('/api/prescriptions/my-prescriptions'),
-  downloadPDF: (id) => `${window.location.origin}/api/prescriptions/${id}/pdf`
+  downloadPDF: (id) => `${import.meta.env.VITE_API_URL || window.location.origin}/api/prescriptions/${id}/pdf`
 };
 
 // Report API
 export const reportAPI = {
   upload: (formData) => api.post('/api/reports/upload', formData, {
-    headers: { 'Content-Type': 'multipart/form-tdata' }
+    headers: { 'Content-Type': 'multipart/form-data' }
   }),
   getMy: () => api.get('/api/reports/my-reports'),
   analyze: (id) => api.post(`/api/reports/${id}/analyze`)
