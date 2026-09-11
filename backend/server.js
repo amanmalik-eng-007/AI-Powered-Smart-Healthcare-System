@@ -67,6 +67,11 @@ app.use('/api/prescriptions', prescriptionRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/ai', aiRoutes);
 
+// Root API status endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({ success: true, message: 'Smart Healthcare API Server is Live' });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, message: 'Server is running healthy' });
